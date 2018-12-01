@@ -5,10 +5,10 @@ import Plx from 'react-plx';
 import '../index.css';
 import ScrollAnimation from 'react-animate-on-scroll';
 
-const parallaxData = [
+const parallaxData2 = [
   {
     start: 0,
-    end: 500,
+    end: 1000,
     properties: [
       {
         startValue: 1,
@@ -23,24 +23,22 @@ export default class Logo extends Component {
 
   render() {
     return (
-      <Plx
-          className='MyAwesomeParallax'
-          parallaxData={ parallaxData }
-          style={styles.main_background}
-        >
-          <div className="initial-screen-in logo-1"></div>
-        </Plx>
+      <div>
+        <div style={styles.overlay_bg} />
+        <div className="initial-screen-out logo-2"></div>
+      </div>
     );
   }
 }
 
 const styles = {
   main_background: {
-    opacity: 1,
+    backgroundColor: 'black',
+    margin: 0,
+    padding: 0,
   },
   overlay_bg: {
-    height: '100%',
-    width: '100%',
-    position: 'fixed',
+    padding: '3%'
   }
 }
+

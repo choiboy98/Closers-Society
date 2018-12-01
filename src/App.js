@@ -1,82 +1,69 @@
 import React, { Component } from 'react';
+import { Pager } from "react-bootstrap";
+
 import './index.css';
-import LogoClass from './scripts/Logo';
-import Particles from 'react-particles-js';
-import Logo from './assets/logo_plain.svg';
+
+import Plx from 'react-plx';
+import ReactPageScroller from "react-page-scroller";
+
+import AboutClass from './scripts/About';
+import LogoOneClass from './scripts/Logo';
+import LogoTwoClass from './scripts/LogoTwo';
+import CreedClass from './scripts/Creed';
+import ClientClass from './scripts/Client';
+import OperationClass from './scripts/Operation';
+import WhyClass from './scripts/Why';
 
 export default class App extends Component {
-  render() {
-    return (
-      <div className="App" style={styles.main_background}>
-        <Particles
-            params={{
-              "fps_limit": 28,
-              "particles": {
-                  "number": {
-                      "value": 400,
-                      "density": {
-                          "enable": false
-                      }
-                  },
-                  "color": {
-                    "value": "ffb400"
-                  },
-                  "line_linked": {
-                      "enable": true,
-                      "distance": 30,
-                      "opacity": 0.4
-                  },
-                  "move": {
-                      "speed": 0.3
-                  },
-                  "opacity": {
-                      "anim": {
-                          "enable": true,
-                          "opacity_min": 0.05,
-                          "speed": 2,
-                          "sync": false
-                      },
-                      "value": 0.4
-                  }
-              },
-              "polygon": {
-                  "enable": true,
-                  "scale": 0.5,
-                  "type": "inline",
-                  "move": {
-                      "radius": 5
-                  },
-                  "url": Logo,
-                  "inline": {
-                      "arrangement": "equidistant"
-                  },
-                  "draw": {
-                      "enable": false,
-                      "stroke": {
-                          "color": "gold"
-                      }
-                  }
-              },
-              "retina_detect": false,
-              "interactivity": {
-                  "events": {
-                      "onhover": {
-                          "enable": true,
-                          "mode": "bubble"
-                      }
-                  },
-                  "modes": {
-                      "bubble": {
-                          "size": 10,
-                          "distance": 100
-                      }
-                  }
-              }
-          }} />
+  constructor(props) {
+    super(props);
+    this.state = {
+      currentPage: 1,
+      pages: ["Home", "About", "Motto", "Customer", "How It Works", "Why Work with Us?"]
+    };
+    this._pageScroller = null;
+  }
 
-        <h1 className = "header"> The Closers Society </h1>
+  goToPage = (eventKey) => {
+    this._pageScroller.goToPage(eventKey);
+  }
+
+  pageOnChange = (number) => {
+    this.setState({currentPage: number});
+  }
+
+  getPagesNumbers = () => {
+
+    const pageNumbers = [];
+
+    for (let i = 1; i <= 6; i++) {
+        pageNumbers.push(
+            <Pager.Item key={i} eventKey={i - 1} onSelect={this.goToPage}><div className="pager">{this.state.pages[i - 1]}</div></Pager.Item>
+        )
+    }
+
+    return [...pageNumbers];
+  }
+
+  render() {
+    const pagesNumbers = this.getPagesNumbers();
+
+    return (
+      <div style={styles.main_background} className="w3-container">
+        <ReactPageScroller ref={c => this._pageScroller = c} pageOnChange={this.pageOnChange}>
+            <LogoOneClass/>
+            <AboutClass/>
+            <CreedClass/>
+            <ClientClass/>
+            <OperationClass/>
+            <WhyClass/>
+
+        </ReactPageScroller>
+        <Pager className="pagination-additional-class" id="pager"bsSize="large" bsClass="pager">
+          {pagesNumbers}
+        </Pager>
       </div>
-    );
+        );
   }
 }
 
