@@ -12,19 +12,19 @@ self.__precacheManifest = [
     "url": "/closers-society/static/js/runtime~main.5d10c3f8.js"
   },
   {
-    "revision": "a5120d47533df5696bad",
-    "url": "/closers-society/static/js/main.a5120d47.chunk.js"
+    "revision": "bcfccbf0c7d46310b90b",
+    "url": "/closers-society/static/js/main.bcfccbf0.chunk.js"
   },
   {
     "revision": "7d675b534befaf245934",
     "url": "/closers-society/static/js/1.7d675b53.chunk.js"
   },
   {
-    "revision": "a5120d47533df5696bad",
+    "revision": "bcfccbf0c7d46310b90b",
     "url": "/closers-society/static/css/main.ffb20de2.chunk.css"
   },
   {
-    "revision": "29fc12c9ca515aa01f36cfeb05f27bc5",
+    "revision": "f0643f696f053214acfd820a69443b3a",
     "url": "/closers-society/index.html"
   }
 ];
