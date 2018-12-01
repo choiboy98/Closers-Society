@@ -100,7 +100,7 @@ const styles = {
   },
   wrapper: {
   	margin: 'auto',
-  	paddingInlineStart: '18%',
+  	paddingLeft: '17.5vw',
   	paddingBottom: '10%'
   }
 }
