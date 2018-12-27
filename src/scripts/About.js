@@ -4,6 +4,8 @@ import Radium, {StyleRoot} from 'radium';
 import ParallaxMousemove from 'react-parallax-mousemove'
 
 import '../index.css';
+
+const text = "A society of the Top 1% of elite Closers in the world. We are experts in advanced sales & closing psychology and techniques. We are specialists in delivering a high end personalized experience with your prospects on the phoneto gently bring them to a close.";
 //        <ParallaxMousemove containerStyle={styles.outter} fullHeight={true}>
 //          <ParallaxMousemove.Layer layerStyle={styles.bgLayerStyle} config={{
 //              xFactor: 0.1,
@@ -17,11 +19,7 @@ import '../index.css';
 //          </ParallaxMousemove.Layer>
 //                  </ParallaxMousemove>
 
-export default class About extends Component {
-
-  render() {
-    return (
-      <div>
+{/* <div>
         <div className="initial-screen-out logo-2"></div>
 
 
@@ -40,35 +38,20 @@ export default class About extends Component {
               on the phone to gently bring them to a close. 
           </h3>
         </StyleRoot>
+      </div> */}
+
+export default class About extends Component {
+
+  render() {
+    return (
+      <div className="card-container">
+        <div className = "empty-space"></div>
+        <div className="card">
+          <h3 className="about">
+            {text}
+          </h3>
+        </div>
       </div>
     );
-  }
-}
-
-const styles = {
-  bounce: {
-    animation: 'x 1s',
-    animationName: Radium.keyframes(fadeIn, 'fadeIn'),
-    color: 'white',
-    alignContent: 'center'
-  },
-  overlay_big: {
-    padding: '10%'
-  },
-  through: {
-    opacity: 0.3,
-  },
-  outter: {
-    backgroundSize: 'cover',
-    width:'100%',
-    overflow: 'hidden',
-  },
-  bgLayerStyle: {
-    position: 'absolute',
-    height: '100%',
-    transform: 'translate(-15%, 17%)',
-  },
-  fontSize: {
-    fontSize: "2vw",
   }
 }

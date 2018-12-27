@@ -10,7 +10,7 @@ export default class Operation extends Component {
 
   render() {
     return (
-      <div>
+      <div className="card-container">
         <div className="initial-screen-out logo-2"></div>
           <div className='creed' style={styles.bounce}>
               <h style={styles.color_only}>
@@ -37,21 +37,9 @@ export default class Operation extends Component {
 }
 
 const styles = {
-  bounce: {
-    color: 'white',
-    alignContent: 'center'
-  },
-  overlay_big: {
-    padding: '5%'
-  },
   color_only: {
     paddingTop: '5%',
     color: 'gold'
-  },
-  title: {
-    color: 'gold',
-    fontSize: 50,
-    width: '49%'
   },
   side: {
     fontSize: "2vw",
@@ -59,17 +47,4 @@ const styles = {
     width: '40%',
     margin: 'auto',
   },
-  through: {
-    opacity: 0.3,
-  },
-  outter: {
-    backgroundSize: 'cover',
-    width:'100%',
-    overflow: 'hidden',
-  },
-  bgLayerStyle: {
-    position: 'absolute',
-    height: '100%',
-    transform: 'translate(20%, 20%)',
-  }
 }

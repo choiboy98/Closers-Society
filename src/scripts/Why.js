@@ -11,6 +11,7 @@ export default class Creed extends Component {
   render() {
     return (
       <div>
+        <div className = "empty-space"></div>
         <div className="initial-screen-out logo-2"></div>
             <div className='creed' style={styles.bounce}>
               <h style={styles.title}>
@@ -24,8 +25,7 @@ export default class Creed extends Component {
               </p>
               <Button href="https://calendly.com/tylerchoihtc" target="_blank" bsSize="large">Book a Call with Us</Button>
             </div>
-
-
+            <div className = "empty-space"></div>
       </div>
     );
   }

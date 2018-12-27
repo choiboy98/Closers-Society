@@ -8,11 +8,12 @@ import ReactPageScroller from "react-page-scroller";
 
 import AboutClass from './scripts/About';
 import LogoOneClass from './scripts/Logo';
-import LogoTwoClass from './scripts/LogoTwo';
 import CreedClass from './scripts/Creed';
 import ClientClass from './scripts/Client';
 import OperationClass from './scripts/Operation';
 import WhyClass from './scripts/Why';
+
+import LandingClass from './scripts/Landing';
 
 export default class App extends Component {
   constructor(props) {
@@ -50,18 +51,12 @@ export default class App extends Component {
 
     return (
       <div style={styles.main_background} className="w3-container">
-        <ReactPageScroller ref={c => this._pageScroller = c} pageOnChange={this.pageOnChange}>
-            <LogoOneClass/>
+            <LandingClass/>
             <AboutClass/>
             <CreedClass/>
             <ClientClass/>
             <OperationClass/>
             <WhyClass/>
-
-        </ReactPageScroller>
-        <Pager className="pagination-additional-class" id="pager"bsSize="large" bsClass="pager">
-          {pagesNumbers}
-        </Pager>
       </div>
         );
   }
