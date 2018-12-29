@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/closers-society/precache-manifest.9fe245447a083d10223ae3c6031e7bc1.js"
+  "/closers-society/precache-manifest.7d53bf63ebc70b2211838752d444e624.js"
 );
 
 workbox.clientsClaim();
